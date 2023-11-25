@@ -246,6 +246,17 @@ body{
     width: 0px;
 }
 
+#explanation{
+    position: absolute;
+    display: none;
+}
+
+#explanation-text{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: absolute;
+    left: 8%;
+}
+
 
 /* </Object> */
 
@@ -522,6 +533,8 @@ body{
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
 }
+
+
 
 
 @media (max-width: 500px) {

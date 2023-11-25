@@ -167,6 +167,10 @@ document.querySelector("#ok-1").onclick = (event) => {
     maincharacter.style.display = "block"
     document.querySelector("#inventory").style.display = "block"
     document.querySelector("#pop-up").style.display = "block"
+    explanation.style.display = "block"
+    setTimeout(() => {
+        explanation.style.display = "none"
+    }, 8000);
 };
 
 document.querySelector("#selectdevice2").onclick = (event) => {
@@ -180,6 +184,10 @@ document.querySelector("#ok-2").onclick = (event) => {
     maincharacter.style.display = "block"
     document.querySelector("#inventory").style.display = "block"
     document.querySelector("#pop-up").style.display = "block"
+    explanation.style.display = "block"
+    setTimeout(() => {
+        explanation.style.display = "none"
+    }, 5000);
 };
 
 
@@ -201,6 +209,8 @@ let handwarmer = document.querySelector("#handwarmer")
 let glass = document.querySelector("#glass")
 let ruler = document.querySelector("#ruler")
 let leftover = document.querySelector("#leftover")
+let explanation = document.querySelector("#explanation")
+let explanationimg = document.querySelector("#explanation-img")
 
 inventory.style.width = window.innerWidth / 10 + "px"
 inventory.style.height = window.innerWidth / 10 + "px"
@@ -234,6 +244,10 @@ ruler.style.width = window.innerWidth / 17 + "px"
 
 leftover.style.bottom = window.innerHeight / 12 + "px"
 leftover.style.width = window.innerWidth / 10 + "px"
+
+explanation.style.bottom = window.innerHeight / 12 + "px"
+explanation.style.left = window.innerWidth / 12 * 9 + "px"
+explanationimg.style.width = window.innerWidth / 6 + "px"
 
 //object
 
