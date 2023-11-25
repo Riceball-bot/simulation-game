@@ -15,22 +15,22 @@ let movementInterval = setInterval(() => {
     if(keyEvent.key == "ArrowRight" && keyEvent.down){
         scaleXofcharacter = 1
         // maincharacter.style.transform = `scaleX(${scaleXofcharacter})`
-        maincharacter.src = `../Image/move_${i}.png`
+        maincharacter.src = `./Image/move_${i}.png`
         clearInterval(movementInterval)
     }else if(keyEvent.key == "ArrowLeft" && keyEvent.down){
         scaleXofcharacter = -1
         // maincharacter.style.transform = `scaleX(${scaleXofcharacter})`
-        maincharacter.src = `../Image/move_${i}.png`
+        maincharacter.src = `./Image/move_${i}.png`
         clearInterval(movementInterval)
     }else if(mousedown === 1){
         scaleXofcharacter = 1
         // maincharacter.style.transform = `scaleX(${scaleXofcharacter})`
-        maincharacter.src = `../Image/move_${i}.png`
+        maincharacter.src = `./Image/move_${i}.png`
         clearInterval(movementInterval)
     }else if(mousedown === 2){
         scaleXofcharacter = -1
         // maincharacter.style.transform = `scaleX(${scaleXofcharacter})` 
-        maincharacter.src = `../Image/move_${i}.png`
+        maincharacter.src = `./Image/move_${i}.png`
         clearInterval(movementInterval)
     }
 }, );
