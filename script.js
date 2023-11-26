@@ -70,6 +70,19 @@ let slipperiness = 35;//Used to set the time of loop for the charVelocity
 let object = document.querySelector(".object");
 let background = document.querySelector("#background")
 let popup = document.querySelector("#pop-up")
+let conestatusright = false
+let conestatusleft = false
+
+setInterval(() => {
+    if(overlap(maincharacter,coneleft)){
+        conestatusleft = true
+    }else if(overlap(maincharacter,coneright)){
+        conestatusright = true
+    }else{
+        conestatusright = false
+        conestatusleft = false
+    }
+}, );
 
 document.addEventListener('keydown', e => {
     keyEvent.key = e.key
@@ -81,12 +94,12 @@ document.addEventListener('keyup', e => {
 })
 
 setInterval(() => {
-    if(keyEvent.key == "ArrowRight" && keyEvent.down){
+    if(keyEvent.key == "ArrowRight" && keyEvent.down && conestatusright === false){
         charVelocity = -3
         objectVelocity = -3
         popupVelocity = -3
         movementvisual()
-    }else if(keyEvent.key == "ArrowLeft" && keyEvent.down){
+    }else if(keyEvent.key == "ArrowLeft" && keyEvent.down && conestatusleft === false){
         charVelocity = 3
         objectVelocity = 3
         popupVelocity = 3
@@ -110,23 +123,27 @@ document.onmouseup= (event) => {
 };
 
 document.querySelector("#right").onmousedown = (event) => {
-    mousedown = 1
-    pressInterval = setInterval(() => {
+    if(conestatusright === false){
+        mousedown = 1
+        pressInterval = setInterval(() => {
         charVelocity = -3
         objectVelocity = -3
         popupVelocity = -3
         movementvisual()
     })
+    }
 };
 
 document.querySelector("#left").onmousedown = (event) => {
-    mousedown = 2
-    pressInterval = setInterval(() => {
-        charVelocity = 3
-        objectVelocity = 3
-        popupVelocity = 3
-        movementvisual()
-    })
+    if(conestatuseleft === false){
+        mousedown = 2
+        pressInterval = setInterval(() => {
+            charVelocity = 3
+            objectVelocity = 3
+            popupVelocity = 3
+            movementvisual()
+        })
+    } 
 };
 
 setInterval(() => {
@@ -154,24 +171,24 @@ let i=0;
 
 // phone setting and computer setting
 
-document.querySelector("#selectdevice1").onclick = (event) => {
-    document.querySelector("#rule2-1").style.display = "block"
-    document.querySelector("#rule").style.display = "none"
-};
+// document.querySelector("#selectdevice1").onclick = (event) => {
+//     document.querySelector("#rule2-1").style.display = "block"
+//     document.querySelector("#rule").style.display = "none"
+// };
 
-document.querySelector("#ok-1").onclick = (event) => {
-    document.querySelector("#rule2-1").style.display = "none"
-    document.querySelector("#right").style.display = "block"
-    document.querySelector("#left").style.display = "block"
-    document.querySelector(".object").style.display = "block"
-    maincharacter.style.display = "block"
-    document.querySelector("#inventory").style.display = "block"
-    document.querySelector("#pop-up").style.display = "block"
-    explanation.style.display = "block"
-    setTimeout(() => {
-        explanation.style.display = "none"
-    }, 8000);
-};
+// document.querySelector("#ok-1").onclick = (event) => {
+//     document.querySelector("#rule2-1").style.display = "none"
+//     document.querySelector("#right").style.display = "block"
+//     document.querySelector("#left").style.display = "block"
+//     document.querySelector(".object").style.display = "block"
+//     maincharacter.style.display = "block"
+//     document.querySelector("#inventory").style.display = "block"
+//     document.querySelector("#pop-up").style.display = "block"
+//     explanation.style.display = "block"
+//     setTimeout(() => {
+//         explanation.style.display = "none"
+//     }, 8000);
+// };
 
 document.querySelector("#selectdevice2").onclick = (event) => {
     document.querySelector("#rule2-2").style.display = "block"
@@ -187,7 +204,7 @@ document.querySelector("#ok-2").onclick = (event) => {
     explanation.style.display = "block"
     setTimeout(() => {
         explanation.style.display = "none"
-    }, 5000);
+    }, 8000);
 };
 
 
@@ -196,6 +213,15 @@ document.querySelector("#leftimg").style.top += windowIHcenter + "px"
 document.querySelector("#rightimg").style.top += windowIHcenter + "px"
 
 // phone setting and computer setting
+
+//text
+
+//text
+let question1 = document.querySelector("#question1")
+let caution = document.querySelector("#caution")
+
+question1.style.fontSize = window.innerHeight / 15 + "px"
+caution.style.fontSize = window.innerHeight / 15 + "px"
 
 //object
 let inventory = document.querySelector("#inventory")
@@ -211,6 +237,15 @@ let ruler = document.querySelector("#ruler")
 let leftover = document.querySelector("#leftover")
 let explanation = document.querySelector("#explanation")
 let explanationimg = document.querySelector("#explanation-img")
+let coneleft = document.querySelector("#cone-left")
+let coneright = document.querySelector("#cone-right")
+
+
+coneleft.style.bottom = window.innerHeight / 12 + "px"
+coneleft.style.width = window.innerWidth / 7 + "px"
+
+coneright.style.bottom = window.innerHeight / 12 + "px"
+coneright.style.width = window.innerWidth / 7 + "px"
 
 inventory.style.width = window.innerWidth / 10 + "px"
 inventory.style.height = window.innerWidth / 10 + "px"
@@ -262,6 +297,7 @@ document.querySelectorAll(".pop-up-bottom").forEach(element => {
 
 //interaction
 let inventorystatus = false
+let correctamount = 0
 
 setInterval(() => {
     //can
@@ -422,6 +458,7 @@ setInterval(() => {
         }, 2000);
         document.querySelector("#inventory-paper").style.display = "none"
         inventorystatus = false
+        correctamount += 1
         }
    }
    if(overlap(maincharacter,burnable) && keyEvent.key == "f" && keyEvent.down && inventorystatus === true){
@@ -432,6 +469,7 @@ setInterval(() => {
         }, 2000);
         document.querySelector("#inventory-tissue").style.display = "none"
         inventorystatus = false
+        correctamount += 1
         }
    }
    if(overlap(maincharacter,burnable) && keyEvent.key == "f" && keyEvent.down && inventorystatus === true){
@@ -442,6 +480,7 @@ setInterval(() => {
         }, 2000);
         document.querySelector("#inventory-bag").style.display = "none"
         inventorystatus = false
+        correctamount += 1
         }
    }
    if(overlap(maincharacter,burnable) && keyEvent.key == "f" && keyEvent.down && inventorystatus === true){
@@ -485,6 +524,7 @@ setInterval(() => {
         }, 2000);
         document.querySelector("#inventory-leftover").style.display = "none"
         inventorystatus = false
+        correctamount += 1
         }
    }
    //burnable-pop-up
@@ -504,6 +544,7 @@ setInterval(() => {
         }, 2000);
         document.querySelector("#inventory-can").style.display = "none"
         inventorystatus = false
+        correctamount += 1
     }
    }
    if(overlap(maincharacter,nonburnable) && keyEvent.key == "f" && keyEvent.down && inventorystatus === true){
@@ -547,6 +588,7 @@ setInterval(() => {
         }, 2000);
         document.querySelector("#inventory-handwarmer").style.display = "none"
         inventorystatus = false
+        correctamount += 1
         }
    }
    if(overlap(maincharacter,nonburnable) && keyEvent.key == "f" && keyEvent.down && inventorystatus === true){
@@ -557,6 +599,7 @@ setInterval(() => {
         }, 2000);
         document.querySelector("#inventory-glass").style.display = "none"
         inventorystatus = false
+        correctamount += 1
         }
    }
    if(overlap(maincharacter,nonburnable) && keyEvent.key == "f" && keyEvent.down && inventorystatus === true){
@@ -567,6 +610,7 @@ setInterval(() => {
         }, 2000);
         document.querySelector("#inventory-ruler").style.display = "none"
         inventorystatus = false
+        correctamount += 1
         }
    }
    if(overlap(maincharacter,nonburnable) && keyEvent.key == "f" && keyEvent.down && inventorystatus === true){
@@ -583,7 +627,7 @@ setInterval(() => {
    //non burnable-pop-up
 
    //game end status
-   if(can && papers && tissue && bag && handwarmer && glass && ruler && leftover.style.display === "none"){
+   if(can.style.display === "none" && papers.style.display === "none" && tissue.style.display === "none" && bag.style.display === "none" && handwarmer.style.display === "none" && glass.style.display === "none" && ruler.style.display === "none" && leftover.style.display === "none" && correctamount === 8){
     document.querySelector("#game-clear").style.display = "block"
    }
    //game end status
