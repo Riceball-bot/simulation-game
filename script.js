@@ -171,25 +171,6 @@ let i=0;
 
 // phone setting and computer setting
 
-// document.querySelector("#selectdevice1").onclick = (event) => {
-//     document.querySelector("#rule2-1").style.display = "block"
-//     document.querySelector("#rule").style.display = "none"
-// };
-
-// document.querySelector("#ok-1").onclick = (event) => {
-//     document.querySelector("#rule2-1").style.display = "none"
-//     document.querySelector("#right").style.display = "block"
-//     document.querySelector("#left").style.display = "block"
-//     document.querySelector(".object").style.display = "block"
-//     maincharacter.style.display = "block"
-//     document.querySelector("#inventory").style.display = "block"
-//     document.querySelector("#pop-up").style.display = "block"
-//     explanation.style.display = "block"
-//     setTimeout(() => {
-//         explanation.style.display = "none"
-//     }, 8000);
-// };
-
 document.querySelector("#selectdevice2").onclick = (event) => {
     document.querySelector("#rule2-2").style.display = "block"
     document.querySelector("#rule").style.display = "none"
