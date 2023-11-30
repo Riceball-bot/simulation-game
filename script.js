@@ -76,11 +76,15 @@ let conestatusleft = false
 setInterval(() => {
     if(overlap(maincharacter,coneleft)){
         conestatusleft = true
+        document.querySelector("#cone-left-pop-up").style.display = "block"
     }else if(overlap(maincharacter,coneright)){
         conestatusright = true
+        document.querySelector("#cone-right-pop-up").style.display = "block"
     }else{
         conestatusright = false
         conestatusleft = false
+        document.querySelector("#cone-left-pop-up").style.display = "none"
+        document.querySelector("#cone-right-pop-up").style.display = "none"
     }
 }, );
 
@@ -200,9 +204,12 @@ document.querySelector("#rightimg").style.top += windowIHcenter + "px"
 //text
 let question1 = document.querySelector("#question1")
 let caution = document.querySelector("#caution")
+let tell1 = document.querySelector("#tell1")
 
 question1.style.fontSize = window.innerHeight / 15 + "px"
 caution.style.fontSize = window.innerHeight / 15 + "px"
+tell1.style.fontSize = window.innerHeight / 15 + "px"
+document.querySelector("#ok-2").style.height = window.innerHeight / 15 + "px"
 
 //object
 let inventory = document.querySelector("#inventory")
@@ -271,7 +278,7 @@ explanationimg.style.width = window.innerWidth / 6 + "px"
 
 
 document.querySelectorAll(".pop-up-bottom").forEach(element => {
-    element.style.bottom = window.innerHeight / 4 + "px"
+    element.style.bottom = window.innerHeight / 3 + "px"
 });
 
 //pop-up
@@ -612,6 +619,12 @@ setInterval(() => {
     document.querySelector("#game-clear").style.display = "block"
    }
    //game end status
+
+   //inventory full
+   if(keyEvent.key == "Enter" && keyEvent.down && document.querySelector("#alert").style.display === "block"){
+    document.querySelector("#alert").style.display = "none"
+   }
+   //inventory full
 }, );
 
 

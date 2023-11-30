@@ -77,14 +77,19 @@ body{
 
 #ok-2{
     position: absolute;
-    left: 35%;
-    bottom: 3%;
     width: 30%;
-    height: 10%;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
     font-size: 100%;
     border-radius: 15px;
     background-color: white;
+}
+
+#ok-2-text{
+    position: relative;
+    transform: translateY(50%);
 }
 
 #question1{
@@ -100,6 +105,14 @@ body{
     text-align: center;
     color: white;
     top: 19vh;
+    width: 100vw;
+}
+
+#tell1{
+    position: absolute;
+    text-align: center;
+    color: white;
+    top: 28vh;
     width: 100vw;
 }
 
@@ -132,7 +145,7 @@ body{
     position: absolute;
     width: 30vw;
     right: 35vw;
-    top: 15vw;
+    top: 20vw;
 }
 
 .character{
@@ -208,49 +221,49 @@ body{
 
 #non-burnable{
     position: absolute;
-    left : 1425px;
+    left : 1550px;
     bottom : 0px;
     width: 0px;
 }
 
 #papers{
     position: absolute;
-    left : 1700px;
+    left : 1800px;
     bottom : 0px;
     width: 0px;
 }
 
 #tissue{
     position: absolute;
-    left : 1950px;
+    left : 2050px;
     bottom : 0px;
     width: 0px;
 }
 
 #bag{
     position: absolute;
-    left : 2100px;
+    left : 2200px;
     bottom : 0px;
     width: 0px;
 }
 
 #handwarmer{
     position: absolute;
-    left : 2350px;
+    left : 2450px;
     bottom : 0px;
     width: 0px;
 }
 
 #glass{
     position: absolute;
-    left : 2550px;
+    left : 2650px;
     bottom : 0px;
     width: 0px;
 }
 
 #ruler{
     position: absolute;
-    left : 2750px;
+    left : 2850px;
     bottom : 0px;
     width: 0px;
     transform: rotate(60deg);
@@ -400,7 +413,7 @@ body{
 
 #non-burnable-pop-up{
     position: absolute;
-    left : 1450px;
+    left : 1550px;
     width: 10vw;
     background-color: white;
     border-radius: 15px;
@@ -409,7 +422,7 @@ body{
 
 #paper-pop-up{
     position: absolute;
-    left : 1700px;
+    left : 1800px;
     width: 10vw;
     background-color: white;
     border-radius: 15px;
@@ -418,7 +431,7 @@ body{
 
 #tissue-pop-up{
     position: absolute;
-    left : 1950px;
+    left : 2050px;
     width: 10vw;
     background-color: white;
     border-radius: 15px;
@@ -427,7 +440,7 @@ body{
 
 #bag-pop-up{
     position: absolute;
-    left : 2100px;
+    left : 2200px;
     width: 10vw;
     background-color: white;
     border-radius: 15px;
@@ -436,7 +449,7 @@ body{
 
 #handwarmer-pop-up{
     position: absolute;
-    left : 2350px;
+    left : 2450px;
     width: 10vw;
     background-color: white;
     border-radius: 15px;
@@ -445,7 +458,7 @@ body{
 
 #glass-pop-up{
     position: absolute;
-    left : 2550px;
+    left : 2650px;
     width: 10vw;
     background-color: white;
     border-radius: 15px;
@@ -454,7 +467,7 @@ body{
 
 #ruler-pop-up{
     position: absolute;
-    left : 2750px;
+    left : 2850px;
     width: 10vw;
     background-color: white;
     border-radius: 15px;
@@ -470,6 +483,23 @@ body{
     display: none;
 }
 
+#cone-left-pop-up{
+    position: absolute;
+    width: 10vw;
+    background-color: white;
+    border-radius: 15px;
+    left: 100px;
+    display: none;
+}
+
+#cone-right-pop-up{
+    position: absolute;
+    width: 10vw;
+    background-color: white;
+    border-radius: 15px;
+    left: 3000px;
+    display: none;
+}
 /* </POP UP> */
 
 #alert{
@@ -518,7 +548,7 @@ body{
     left: 25%;
     top: 35%;
     width: 50%;
-    height: 30%;
+    height: 50%;
     background-color: white;
     border-radius: 150px;
     display: none;
