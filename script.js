@@ -186,6 +186,7 @@ document.querySelector("#ok-2").onclick = (event) => {
     maincharacter.style.display = "block"
     document.querySelector("#inventory").style.display = "block"
     document.querySelector("#pop-up").style.display = "block"
+    document.querySelector("#dictionary").style.display = "block"
     explanation.style.display = "block"
     setTimeout(() => {
         explanation.style.display = "none"
@@ -213,6 +214,10 @@ document.querySelector("#ok-2").style.height = window.innerHeight / 15 + "px"
 
 //object
 let inventory = document.querySelector("#inventory")
+let dictionary = document.querySelector("#dictionary")
+let innerdictionaryText = document.querySelector("#innerdictionary-text")
+let closedictionary = document.querySelector("#close-dictionary")
+let dictionaryContext = document.querySelector("#dictionary-context")
 let can = document.querySelector("#can")
 let burnable = document.querySelector("#burnable")
 let nonburnable = document.querySelector("#non-burnable")
@@ -237,6 +242,14 @@ coneright.style.width = window.innerWidth / 7 + "px"
 
 inventory.style.width = window.innerWidth / 10 + "px"
 inventory.style.height = window.innerWidth / 10 + "px"
+
+dictionary.style.width = window.innerWidth / 10 + "px"
+dictionary.style.height = window.innerWidth / 10 + "px"
+
+innerdictionaryText.style.fontSize = window.innerWidth / 20 + "px"
+closedictionary.style.fontSize = window.innerWidth / 40 + "px"
+closedictionary.style.height = window.innerWidth / 23 + "px"
+dictionaryContext.style.top = window.innerHeight / -25 + "px"
 
 can.style.bottom = window.innerHeight / 12 + "px"
 can.style.width = window.innerWidth / 15 + "px"
@@ -625,6 +638,16 @@ setInterval(() => {
     document.querySelector("#alert").style.display = "none"
    }
    //inventory full
+
+   //dictionary
+   document.querySelector("#dictionary-img").onclick = (event) => {
+    document.querySelector("#innerdictionary").style.display = "block"
+   };
+
+   document.querySelector("#close-dictionary").onclick = (event) => {
+    document.querySelector("#innerdictionary").style.display = "none"
+   };
+   //dictionary
 }, );
 
 

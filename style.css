@@ -287,6 +287,55 @@ body{
     left: 8%;
 }
 
+#dictionary{
+    position: absolute;
+    left: 1%;
+    top: 1%;
+    display: none;
+    background-color: grey;
+    border-radius: 10px;
+}
+
+#dictionary-img{
+    width: 95%;
+    height: 95%;
+}
+
+#innerdictionary{
+    position: absolute;
+    display: none;
+    background-color: white;
+    width: 50%;
+    height: 90%;
+    left: 25%;
+    top: 5%;
+    z-index: 500;
+    border-radius: 15px;
+}
+
+#innerdictionary-text{
+    text-align: center;
+    z-index: 100;
+    position: relative;
+}
+
+#dictionary-context{
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+
+#close-dictionary{
+    position: absolute;
+    left: 25%;
+    bottom: 5%;
+    width: 50%;
+    height: 7%;
+    border-radius: 10px;
+    text-align: center;
+    background-color: red;
+}
+
 
 /* </Object> */
 
