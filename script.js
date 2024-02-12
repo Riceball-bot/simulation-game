@@ -187,6 +187,7 @@ document.querySelector("#ok-2").onclick = (event) => {
     document.querySelector("#inventory").style.display = "block"
     document.querySelector("#pop-up").style.display = "block"
     document.querySelector("#dictionary").style.display = "block"
+    document.querySelector("#controls").style.display = "block"
     explanation.style.display = "block"
     setTimeout(() => {
         explanation.style.display = "none"
@@ -214,10 +215,15 @@ document.querySelector("#ok-2").style.height = window.innerHeight / 15 + "px"
 
 //object
 let inventory = document.querySelector("#inventory")
+
 let dictionary = document.querySelector("#dictionary")
 let innerdictionaryText = document.querySelector("#innerdictionary-text")
 let closedictionary = document.querySelector("#close-dictionary")
 let dictionaryContext = document.querySelector("#dictionary-context")
+let controls = document.querySelector("#controls")
+let innercontrolsText = document.querySelector("#innercontrols-text")
+let closecontrols = document.querySelector("#close-controls")
+let controlsContext = document.querySelector("#controls-context")
 let can = document.querySelector("#can")
 let burnable = document.querySelector("#burnable")
 let nonburnable = document.querySelector("#non-burnable")
@@ -250,6 +256,14 @@ innerdictionaryText.style.fontSize = window.innerWidth / 20 + "px"
 closedictionary.style.fontSize = window.innerWidth / 40 + "px"
 closedictionary.style.height = window.innerWidth / 23 + "px"
 dictionaryContext.style.top = window.innerHeight / -25 + "px"
+
+controls.style.width = window.innerWidth / 10 + "px"
+controls.style.height = window.innerWidth / 10 + "px"
+
+innercontrolsText.style.fontSize = window.innerWidth / 20 + "px"
+closecontrols.style.fontSize = window.innerWidth / 40 + "px"
+closecontrols.style.height = window.innerWidth / 23 + "px"
+controlsContext.style.top = window.innerHeight / -25 + "px"
 
 can.style.bottom = window.innerHeight / 12 + "px"
 can.style.width = window.innerWidth / 15 + "px"
@@ -648,6 +662,16 @@ setInterval(() => {
     document.querySelector("#innerdictionary").style.display = "none"
    };
    //dictionary
+
+   //controls
+   document.querySelector("#controls-img").onclick = (event) => {
+    document.querySelector("#innercontrols").style.display = "block"
+   };
+
+   document.querySelector("#close-controls").onclick = (event) => {
+    document.querySelector("#innercontrols").style.display = "none"
+   };
+   //controls
 }, );
 
 

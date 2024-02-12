@@ -336,6 +336,67 @@ body{
     background-color: red;
 }
 
+#controls{
+    position: absolute;
+    left: 13%;
+    top: 1%;
+    display: none;
+    background-color: grey;
+    border-radius: 10px;
+}
+
+#controls-img{
+    width: 95%;
+    height: 95%;
+}
+
+#innercontrols{
+    position: absolute;
+    display: none;
+    background-color: white;
+    width: 50%;
+    height: 90%;
+    left: 25%;
+    top: 5%;
+    z-index: 500;
+    border-radius: 15px;
+}
+
+#innercontrols-text{
+    text-align: center;
+    z-index: 100;
+    position: relative;
+}
+
+#controls-context{
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+
+#close-controls{
+    position: absolute;
+    left: 25%;
+    bottom: 5%;
+    width: 50%;
+    height: 7%;
+    border-radius: 10px;
+    text-align: center;
+    background-color: red;
+}
+
+
+#arrow-right{
+    position: absolute;
+    right: 3%;
+    width: 10%;
+}
+
+#arrow-left{
+    position: absolute;
+    right: 8%;
+    width: 10%;
+}
 
 /* </Object> */
 
